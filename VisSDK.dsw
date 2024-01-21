@@ -1,0 +1,143 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "All"=.\All.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisCore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name VisDisplay
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name VisImSrc
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name VisMatrix
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name VisVFWCamera
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Wizard
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisCore"=.\VisCore\VisCore.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisDisplay"=.\VisDisplay\VisDisplay.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisCore
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisImSrc"=.\VisImSrc\VisImSrc.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisCore
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisLocalInfo"=.\VisLocalInfo\VisLocalInfo.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "VisMatrix"=.\VisMatrix\VisMatrix.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisCore
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisVFWCamera"=.\VisVFWCamera\VisVFWCamera.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Wizard"=.\Wizard\Wizard.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

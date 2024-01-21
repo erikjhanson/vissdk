@@ -1,0 +1,149 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "AllLibs"=.\AllLibs.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisCoreLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name VisDisplayLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name VisImSrcLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name VisMatrixLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name VisVFWCameraLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Wizard
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisCoreLib"=.\VisCore\VisCoreLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisDisplayLib"=.\VisDisplay\VisDisplayLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisImSrcLib"=.\VisImSrc\VisImSrcLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisLocalInfo"=.\VisLocalInfo\VisLocalInfo.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "VisMatrixLib"=.\vismatrix\VisMatrixLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisVFWCameraLib"=.\VisVFWCamera\VisVFWCameraLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Wizard"=.\Wizard\Wizard.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

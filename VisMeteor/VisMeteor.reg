@@ -1,0 +1,117 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0\ImSrc]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0\ImSrc\Devs]
+"Default"="VisMeteor"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0\ImSrc\Devs\VisMeteor]
+@="Matrox Meteor Card"
+"DLL"="VisMeteor.dll"
+"Available"=dword:00000001
+"Default"="Meteor Card 0, NTSC Y/C Input"
+
+; Subkeys Dev0, ..., Dev9 describe installed cards
+; The code will check for installed cards at runtime
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0\ImSrc\Devs\VisMeteor\Dev0]
+@="Meteor Card 0"
+"Available"=dword:00000001
+
+; Subkeys M_RS170, M_RS170_LOW, ..., M_CCIR_VIA_RGB describe available signals.
+; (Subkey Default gives the default signal and channel to use with this card.)
+; The API to auto-detect available signals does not work correctly, so the user needs to choose a signal
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0\ImSrc\Devs\VisMeteor\Dev0\Default]
+@="Meteor Card 0, Default Input"
+"Dig"="M_NTSC_YC"
+"Channel"="Default"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC_YC]
+@="Meteor Card 0, NTSC Y/C Input"
+"Available"=dword:00000001
+
+; Subkeys Default, Ch0, Ch1, Ch2, and ch3 describe available channels
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC_YC\Default]
+@="Meteor Card 0, NTSC Y/C Input, Default Channel"
+"Available"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC]
+@="Meteor Card 0, NTSC RCA or BNC Input"
+"Available"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC\Default]
+@="Meteor Card 0, NTSC RCA or BNC Input, Default Channel"
+"Available"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC_RGB]
+@="Meteor Card 0, NTSC RGB Input"
+"Available"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC_RGB\Default]
+@="Meteor Card 0, NTSC RGB Input, Default Channel"
+"Available"=dword:00000000
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0\ImSrc]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0\ImSrc\Devs]
+"Default"="VisMeteor"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0\ImSrc\Devs\VisMeteor]
+@="Matrox Meteor Card (Debug)"
+"DLL"="VisMeteorDB.dll"
+"Available"=dword:00000001
+"Default"="Meteor Card 0, NTSC Y/C Input"
+
+; Subkeys Dev0, ..., Dev9 describe installed cards"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0\ImSrc\Devs\VisMeteor\Dev0]
+@="Meteor Card 0 (Debug)"
+"Available"=dword:00000001
+
+; Subkeys M_RS170, M_RS170_LOW, ..., M_CCIR_VIA_RGB describe available signals
+; (Subkey Default gives the default signal and channel to use with this card.)
+; The API to auto-detect available signals does not work correctly, so the user needs to choose a signal
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0\ImSrc\Devs\VisMeteor\Dev0\Default]
+@="Meteor Card 0, Default Input (Debug)"
+"Dig"="M_NTSC_YC"
+"Channel"="Default"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC_YC]
+@="Meteor Card 0, NTSC Y/C Input (Debug)"
+"Available"=dword:00000001
+
+; Subkeys Default, Ch0, Ch1, Ch2, and ch3 describe available channels
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC_YC\Default]
+@="Meteor Card 0, NTSC Y/C Input, Default Channel (Debug)"
+"Available"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC]
+@="Meteor Card 0, NTSC RCA or BNC Input (Debug)"
+"Available"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC\Default]
+@="Meteor Card 0, NTSC RCA or BNC Input, Default Channel (Debug)"
+"Available"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC_RGB]
+@="Meteor Card 0, NTSC RGB Input (Debug)"
+"Available"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisSDK\Debug\1.0\ImSrc\Devs\VisMeteor\Dev0\M_NTSC_RGB\Default]
+@="Meteor Card 0, NTSC RGB Input, Default Channel (Debug)"
+"Available"=dword:00000000

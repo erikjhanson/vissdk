@@ -1,0 +1,143 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "ExArrayOfPanes"=.\ExArrayOfPanes\ExArrayOfPanes.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ExAvi"=.\ExAvi\ExAvi.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ExCamera"=.\ExCamera\ExCamera.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ExGrabBmp"=.\ExGrabBmp\ExGrabBmp.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ExMFCOpenSave"=.\ExMFCOpenSave\ExMFCOpenSave.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Examples"=.\Examples.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ExArrayOfPanes
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ExCamera
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ExGrabBmp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ExMFCOpenSave
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ExAvi
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisLocalInfo"=..\VisLocalInfo\VisLocalInfo.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Wizard"=..\Wizard\Wizard.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

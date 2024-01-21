@@ -1,0 +1,359 @@
+<HTML>
+
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Developer Studio">
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1">
+
+<TITLE>Microsoft Vision SDK Frequently Asked Questions</TITLE>
+
+</HEAD>
+
+<BASEFONT FACE="Verdana, Arial, Helvetica, sans-serif">
+<BODY bgcolor="#FFFFFF">
+
+
+<H1>
+<center><span class="bighead">Microsoft Vision SDK</span></center>
+
+<center><span class="bighead">Frequently Asked Questions</span></center>
+</H1>
+
+
+<A NAME="top_of_page"></A>
+
+<P>
+<UL>
+	<LI><A HREF="#General">General Questions</A>
+	<UL>
+		<LI><A HREF="#Gen_What">What is the Vision SDK?</A>
+		<LI><A HREF="#Gen_languages">Can I use the Vision SDK with programming languages other than C++, like Java or Visual Basic?</A>
+		<LI><A HREF="#Gen_formats">What file formats are supported by the Vision SDK?</A>
+		<LI><A HREF="#Gen_32bit">Why can't other applications open files saved by the Vision SDK?</A>
+		<LI><A HREF="#Gen_IP">What Image Processing functions are contained in the Vision SDK?</A>
+		<LI><A HREF="#Gen_convert">What functions can I use to convert between color and grayscale images?</A>
+		<LI><A HREF="#Gen_MFC">Can I use the Vision SDK without using MFC?</A>
+		<LI><A HREF="#Gen_CLAPACK">How can I use CLAPACK with the Vision SDK?</A>
+		<LI><A HREF="#Gen_DirectShow">How can I use DirectShow with the Vision SDK?</A>
+		<LI><A HREF="#Gen_download">I keep getting errors when I try to download the Vision SDK.</A>
+		<LI><A HREF="#Gen_Compiler">I get an Internal Compiler Error when building the Vision SDK.</A>
+		<LI><A HREF="#Gen_type">When I try to open a file, there's an exception because there's no file I/O handler for the specified file type.</A>
+		<LI><A HREF="#Gen_CapCrash">When I stop capturing images from my digitizer, the program will sometimes crash in VisConvertRGB.inl or VisConvertYUV.inl.</A>
+		<LI><A HREF="#Gen_EditAndCont">I get a link warning (LNK4075) when building the Vision SDK with Visual C++ version 6.0.</A>
+	</UL>
+
+	<LI><A HREF="#ImageMagick">ImageMagick</A>
+	<UL>
+		<LI><A HREF="#IM_What">What is ImageMagick?</A>
+		<LI><A HREF="#IM_find">Where can I find ImageMagick?</A>
+		<LI><A HREF="#IM_DestroyImageInfo">When I build the VisXImageMagick project, there's a compiler error that DestroyImageInfo is not defined.</A>
+		<LI><A HREF="#IM_BMP">Why can't I read some BMP files that I saved with an earlier version of ImageMagick?</A>
+		<LI><A HREF="#IM_Hang">What should I do if the compiler "hangs" while compiling decode.c?</A>
+	</UL>
+
+	<LI><A HREF="#Cameras">Cameras and Digitizer Cards</A>
+	<UL>
+		<LI><A HREF="#Cam_QuickCam">How can I get the Vision SDK to work with the grayscale QuickCam ® camera?</A>
+		<LI><A HREF="#Cam_exit">When I attempt to exit my program after using the Vision SDK to get images from my camera, the program crashes.</A>
+		<LI><A HREF="#Cam_Meteor">How can I use other digitizer / signal / channel combinations with the Matrox ® Meteor ® card?</A>
+		<LI><A HREF="#Cam_driver">Can I use the Vision SDK to write a VFW driver for the Matrox ® Meteor ® card?</A>
+	</UL>
+
+	<LI><A HREF="#Examples">Example Programs</A>
+	<UL>
+		<LI><A HREF="#Ex_HelloWorld">There's an access violation when I run the Hello World example program.</A>
+		<LI><A HREF="#Ex_GrabBmp">There's an access violation (or exception) when I run the ExGrabBmp program.</A>
+		<LI><A HREF="#Ex_bars">When I run the ExCamera example program, colored bars are displayed.</A>
+		<LI><A HREF="#Ex_solid">When I run the ExCamera example program, a solid (blue or black) rectangle is displayed.</A>
+		<LI><A HREF="#Ex_open">The ExMFCOpenSave example can't open or save my files.</A>
+		<LI><A HREF="#Ex_disappears">When I click on an image in the ExArrayOfPanes program, it disappears.</A>
+	</UL>
+</UL>
+</P><BR>
+
+
+<A NAME="General"></A>
+<H2>
+  General Questions
+</H2>
+
+<A NAME="Gen_What"></A>
+<H3>
+	What is the Vision SDK?
+</H3><P>
+	The Microsoft Vision SDK is a library for writing programs to perform image manipulation and analysis on computers running the Windows operating system.  It is aimed at supporting researchers and developers of advanced applications, including real-time image processing.  The Vision SDK is a low-level library, intended to provide a strong programming foundation for research and application development; it is not a high-level platform for end-users to experiment with imaging operations.  The Vision SDK is a C++ library of object definitions, related software, and documentation for use with Microsoft Visual C++.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Gen_languages"></A>
+<H3>
+	Can I use the Vision SDK with programming languages other than C++, like Java or Visual Basic?
+</H3><P>
+	No.  The Vision SDK can only be used in C++.  It uses C++ templates and inline functions that can not be called from other programming languages.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Gen_formats"></A>
+<H3>
+	What file formats are supported by the Vision SDK?
+</H3><P>
+	The Vision SDK defines a file I/O interface that can be used to add support for new file formats,
+	but the Vision SDK does not include much file I/O code.  To read common graphics file formats, the
+	Vision SDK includes code to use the ImageMagick library.  The Vision SDK does include a custom MSV
+	file type that can be used to read and write most images used with the Vision SDK, including
+	multiband images and images with non-standard pixel types.  There is also a file handler for BMP files,
+	and there are sample file I/O handlers for PostScript (PS) and Portable Pix Map (PPM) files.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Gen_32bit"></A>
+<H3>
+	Why can't other applications open files saved by the Vision SDK?
+</H3><P>
+	Some file formats, like bitmap (BMP) files, can use 32-bit RGBA pixel values that include alpha
+	information or 24-bit RGB pixel values that don't include alpha information.  Some applications
+	can read files that use 24-bit RGB pixel values but not files that use 32-bit RGBA pixel values.
+
+	By default, the Vision SDK includes alpha information when writing these file formats.  Your
+	application can call "CVisImageBase::SetIsAlphaWritten(false)" to tell the Vision SDK that alpha
+	information should not be included when writing these file formats.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Gen_IP"></A>
+<H3>
+	What Image Processing functions are contained in the Vision SDK?
+</H3><P>
+	The only Image Processing functions contained in the Vision SDK are overloaded C++ operators (+, -,…) that work with images, image methods that convert between different image formats, and image methods that pad image borders.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Gen_convert"></A>
+<H3>
+	What functions can I use to convert between color and grayscale images?
+</H3><P>
+	The CVisImageBase:: CopyPixelsTo method can be used to copy pixel values from a grayscale image to a color image (that uses RGBA pixel values of the same numeric type).  The global VisIntensityFromRGBA function can be used to get a grayscale image (CVisGrayByteImage) from a CVisRGBAByteImage.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Gen_MFC"></A>
+<H3>
+	Can I use the Vision SDK without using MFC?
+</H3><P>
+	The current release of the Vision SDK includes the MFC header files when compiling and links with the MFC libraries in DLLs.  It is possible to use some Vision SDK functions in non-MFC applications, but care must be taken to avoid putting up dialogs or making other calls that depend on MFC.  (If a function depends on MFC and the application does not use MFC, the function could cause the application to crash.)
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="#Gen_CLAPACK"></A>
+<H3>
+	How can I use CLAPACK with the Vision SDK?
+</H3><P>
+	You can download CLAPACK from <a target="_top" href="http://www.netlib.org/">http://www.netlib.org/</a>.
+	You'll need to create VC++ project files to build BLAS, CLAPACK, F77, and I77 libraries (with "DB" appended
+	to the names of the debug libraries).  Your projects should use the standard libraries in DLLs.  (The easiest
+	way to do this is to use MFC in a shared DLL.)  When you have built these libraries, copy them to the LIB
+	directory in the VisXCLAPACK project and build the VisXCLAPACK DLL.  If the VisXCLAPACK DLL is on your path,
+	the VisMatrix project can use it to call some CLAPACK functions.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="#Gen_DirectShow"></A>
+<H3>
+	How can I use DirectShow with the Vision SDK?
+</H3><P>
+	If you have a DirectShow driver for your video capture device, you can use DirectShow with the
+	Vision SDK to get images from your video capture device on Windows 98
+	and Windows 2000.  You'll need to install the DirectX Media SDK (available from Microsoft's Web site)
+	to the default location (c:\DXMedia)
+	and add the c:\DXMedia\include and c:\DXMedia\Classes\Base directories to the top of the list of
+	include directories used with VC++ and add the c:\DXMedia\lib directory to the list of library file
+	directories used with VC++.  Then you should be able to build the VisXRenderFil and VisXDS projects
+	to get DLLs that can be used by the Vision SDK to get images from DirectShow video capture devices.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Gen_download"></A>
+<H3>
+	I keep getting errors when I try to download the Vision SDK.
+</H3><P>
+	Some users in other parts of the world (far from Redmond, WA, USA) have had trouble downloading the Vision SDK.  If you have tried repeatedly to download the Vision SDK and keep getting errors, you can send us email stating that you agree to our license agreement and would like us to send you the Vision SDK via email.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Gen_Compiler"></A>
+<H3>
+	I get an Internal Compiler Error when building the Vision SDK.
+</H3><P>
+	The Vision SDK uses a lot of templates and inline functions.  Some users had problems using the VC++ 5.0
+	and VC++ 6.0 compilers to build the Vision SDK on Windows 95 and Windows 98.  If you have this problem,
+	we'd recommend that you download the full version of the Vision SDK so that you don't need to build
+	the Vision SDK libraries.  You may be able to work around this problem by going to the C / C++
+	tab in the Project / Settings dialog in VC++, selecting all configuations of all projects whose names
+	begin with "Vis" or "Ex", choosing the Precompiled Headers category, and turning off Precompiled Headers.
+	You should be able to use the VC++ 6.0 compiler to build the Vision SDK (with precompiled header files)
+	on Windows NT.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Gen_type"></A>
+<H3>
+	When I try to open a file, there's an exception because there's no file I/O handler for the specified file type.
+</H3><P>
+	The Vision SDK defines a file I/O interface that can be used to add support for new file formats, but the Vision SDK does not include much file I/O code.  To read common graphics file formats, the Vision SDK includes code to use the ImageMagick library.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Gen_CapCrash"></A>
+<H3>
+	When I stop capturing images from my digitizer, the program will sometimes crash in VisConvertRGB.inl or VisConvertYUV.inl.
+</H3><P>
+	When the Vision SDK gets an image from a digitizer, it may need to copy or convert the image data to
+	image data in a buffer that can be used with the Vision SDK.  The Vision SDK is told about the image
+	data in a "callback function".  There could be some problems, like a reduced frame rate, if the Vision
+	SDK spends too much time in the "callback function."  To avoid these problems, the image data is not
+	copied or converted in the "callback function".  Instead, another thread is used to copy or convert the
+	image data.  This crash can happen if the digitizer invalidates the image data while the other thread
+	is still trying to access it.  This is more likely to happen with large images in YUV formats, because
+	image conversion is slower for such images.  It can happen with VFW devices, but it should not happen
+	with the Matrox ® Meteor ® card.  This has not been a big problem in practice, so we haven't felt a need
+	to try to correct it.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Gen_EditAndCont"></A>
+<H3>
+	I get a link warning (LNK4075) when building the Vision SDK with Visual C++ version 6.0.
+</H3><P>
+	The project files distributed with the Vision SDK were written for Visual C++ version 5.0.  Visual C++
+	version 6.0 adds a new "edit and continue" PDB option.  That option is turned on when the project files
+	are converted to the Visual C++ version 6.0 format.  It requires that incremental linking
+	be turned on, but incremental linking is turned off in the Vision SDK project files.
+</P><P>
+	You can safely ignore this warning.  If it bothers you, you can edit the project settings (in the Project
+	/ Settings dialog) to turn on
+	incremental linking (on the Link tab) or to use PDBs without the "edit and continue" information
+	(on the Debug tab).
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+
+<A NAME="ImageMagick"></A>
+<H2>
+  ImageMagick
+</H2>
+
+<A NAME="IM_What"></A>
+<H3>
+	What is ImageMagick?
+</H3><P>
+	ImageMagick is "a package for display and interactive manipulation of images for the X Window System" that is available from <a target="_top" href="http://www.wizards.dupont.com/cristy/ImageMagick.html">http://www.wizards.dupont.com/cristy/ImageMagick.html</a>.  The Vision SDK can use ImageMagick to read and write common graphics file formats.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="IM_find"></A>
+<H3>
+	Where can I find ImageMagick?
+</H3><P>
+	ImageMagick is available at http://www.wizards.dupont.com/cristy/ImageMagick.html.  The version that can be used with the Vision SDK can be found by going to this page and clicking on the link to the download site for the Windows NT version.  Get the larger ZIP file (with the release numbers in its name), not the file named "ImageMagick-nt.zip".  (If you don't see a ZIP file but you do see a file whose name ends in ".tar.gz", you're probably in the wrong directory.  Click on the "NT" link to go to the release directory for the Windows NT version of ImageMagick.)
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="IM_DestroyImageInfo"></A>
+<H3>
+	When I build the VisXImageMagick project, there's a compiler error that DestroyImageInfo is not defined.
+</H3><P>
+	You may have downloaded the wrong version of ImageMagick.  Make sure that you downloaded the full Windows NT version (as described in the answer to the previous question).
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="#IM_BMP"></A>
+<H3>
+	Why can't I read some BMP files that I saved with an earlier version of ImageMagick?
+</H3><P>
+	Some earlier versions of ImageMagick may have written incorrect size information in BMP
+	file headers.  If you have this problem, you can try to work around it by commenting out
+	the PrematureExit code that is called if (bmp_header.file_size - bmp_header.size) is
+	larger than image->filesize in the ReadBMPImage function in the magick\decode.c file in
+	the ImageMagick project.  You shouldn't need to make this change unless you have a problem
+	reading BMP files that you saved with an earlier version of ImageMagick.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="#IM_Hang"></A>
+<H3>
+	What should I do if the compiler "hangs" while compiling decode.c?
+</H3><P>
+	One user reported that the compiler "hanged" while compiling decode.c in version 4.2.1 of ImageMagick.
+	The problem was fixed by adding "#include" directives to include "magick.h", "dicom.h", and "logo.h"
+	at the top of the "decode.c" file.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+
+<A NAME="Cameras"></A>
+<H2>
+  Cameras and Digitizer Cards
+</H2>
+
+<A NAME="Cam_QuickCam"></A>
+<H3>
+	How can I get the Vision SDK to work with the grayscale QuickCam ® camera?
+</H3><P>
+	Some users have had problems getting the Vision SDK to work with this camera.  To fix the problem, we need to tell the Vision SDK about the format of the images that it gets from the QuickCam ® VFW driver.  It might be possible to do this by editing the registry keys used by the Vision SDK, but it may also be the case that the Vision SDK does not know about the formats used with this camera.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Cam_exit"></A>
+<H3>
+	When I attempt to exit my program after using the Vision SDK to get images from my camera, the program crashes.
+</H3><P>
+	This has been reported with the Winnov ® video conferencing camera.  We don't know why it happens.  It only seems to happen with the Winnov ® camera.  (Please let us know if you find that this happens with any other cameras.)
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Cam_Meteor"></A>
+<H3>
+	How can I use other digitizer / signal / channel combinations with the Matrox ® Meteor ® card?
+</H3><P>
+	You can change the registry keys used by the VisMeteor project.  The best way to do this is to edit a copy of the VisMeteor.reg file (in the VisMeteor project) and then double-click on the edited REG file to add the new registry entries.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Cam_driver"></A>
+<H3>
+	Can I use the Vision SDK to write a VFW driver for the Matrox ® Meteor ® card?
+</H3><P>
+	No, the Vision SDK won't help with this.  You'll need to use the Windows DDK and the MIL library functions to write a VFW driver.  It may be difficult to write such a driver.  We don't know of anyone who has done this.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+
+<A NAME="Examples"></A>
+<H2>
+  Example Programs
+</H2>
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Ex_HelloWorld"></A>
+<H3>
+	There's an access violation when I run the Hello World example program.
+</H3><P>
+	The Hello World example program assumes that you have used ExCamera to select a default digitizer and that the ImageMagick and VisXImageMagick DLLs are available to save images.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Ex_GrabBmp"></A>
+<H3>
+	There's an access violation (or exception) when I run the ExGrabBmp program.
+</H3><P>
+	The ExGrabBmp example program assumes that you have used ExCamera to select a default digitizer and that the ImageMagick and VisXImageMagick DLLs are available to save images.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Ex_bars"></A>
+<H3>
+	When I run the ExCamera example program, colored bars are displayed.
+</H3><P>
+	Either the program could not find an available digitizer or the program could not get images from the digitizer.  The program might not find an available digitizer if you don't have a digitizer on your computer, the registry entries for your digitizer are missing, the DLLs for your digitizer are not in your path, or there are other applications running that are using your digitizer(s).
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Ex_solid"></A>
+<H3>
+	When I run the ExCamera example program, a solid (blue or black) rectangle is displayed.
+</H3><P>
+	This can happen if the Vision SDK does not recognize the format of the images that it's getting from your digitizer.  This can also happen when your camera is not turned on, its lens is covered, its iris is closed, or it is not connected to your computer.
+</P><P>
+	You can see if this is a problem with the Vision SDK by using another program to get images from your digitizer.  With VFW devices, you can use the VisCap32.exe program to test your digitizer and adjust the compression, source, and format settings.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Ex_open"></A>
+<H3>
+	The ExMFCOpenSave example can't open or save my files.
+</H3><P>	
+	This will happen if you're not using ImageMagick with the Vision SDK, if you're using a file type that ImageMagick does not recognize, or if there's a problem with a particular file that you're trying to load.  The Vision SDK should be able to open the files in the SampleImages directory if you're using ImageMagick.  Even if you're not using ImageMagick, the Vision SDK should be able to open the "image2.ps" image file and it should be able to write "PS", "PPM", and "MSV" files.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+<A NAME="Ex_disappears"></A>
+<H3>
+	When I click on an image in the ExArrayOfPanes program, it disappears.
+</H3><P>
+	The disappearing "image2.ps" image demonstrates an option (evispanedispNoOrigNoScrnBuf) that can be used to display images in Pane windows.  The option specifies that the CVisPane object should not keep any copies of the image being displayed, so the CVisPane object can't redraw the image when the window needs to be refreshed.
+</P><P><A HREF="#top_of_page">Top</A></P><BR>
+
+
+</BODY>
+</HTML>

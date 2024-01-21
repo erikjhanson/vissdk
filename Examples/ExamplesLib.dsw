@@ -1,0 +1,131 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "EXARRAYOFPANESLib"=.\ExArrayOfPanes\ExArrayOfPanesLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "EXGRABBMPLib"=.\ExGrabBmp\ExGrabBmpLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "EXMFCOPENSAVELib"=.\ExMFCOpenSave\ExMFCOpenSaveLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ExAviLib"=.\ExAvi\ExAviLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ExCameraLib"=.\ExCamera\ExCameraLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ExamplesLib"=.\ExamplesLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ExArrayOfPanesLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ExAviLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ExCameraLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ExGrabBmpLib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ExMFCOpenSaveLib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VisLocalInfo"=..\VisLocalInfo\VisLocalInfo.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Wizard"=..\Wizard\Wizard.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name VisLocalInfo
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+
